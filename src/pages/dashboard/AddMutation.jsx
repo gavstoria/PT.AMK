@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { RefreshCw } from 'lucide-react';
+import { RefreshCw, ArrowLeft } from 'lucide-react';
 import '../../components/SharedUI.css';
 
 const AddMutation = () => {
@@ -13,8 +13,9 @@ const AddMutation = () => {
 
   return (
     <div className="page-container">
-      <div className="page-header">
-        <h1 className="page-title">Form Pengajuan Mutasi Aset</h1>
+      <div className="page-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <button className="btn-back" onClick={() => navigate(-1)}><ArrowLeft size={24} /></button>
+        <h1 className="page-title" style={{ margin: 0 }}>Form Pengajuan Mutasi Aset</h1>
       </div>
 
       <div className="form-container">

@@ -12,7 +12,11 @@ const Login = () => {
     e.preventDefault();
     // Dummy login logic
     if (email && password) {
-      navigate('/dashboard');
+      if (email.toLowerCase().includes('teknisi')) {
+        navigate('/technician');
+      } else {
+        navigate('/dashboard');
+      }
     }
   };
 
@@ -20,8 +24,12 @@ const Login = () => {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <div className="login-logo">
-            <Activity size={40} />
+          <div className="login-logo" style={{ marginBottom: '1rem' }}>
+            <img 
+              src="/asetra-oren.png" 
+              alt="Logo ASETRA" 
+              style={{ width: '200px', objectFit: 'contain' }} 
+            />
           </div>
           <h2>Selamat Datang Kembali</h2>
           <p>Silakan masuk ke akun Anda</p>
